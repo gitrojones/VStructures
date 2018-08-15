@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/gitrojones/VStructures#readme",
   "dependencies": {
-    "vue": "^2.5.16",
-    "vue-loader": "^15.0.9",
-    "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
+    "vue": "^2.5.16",
+    "vue-loader": "^15.0.9",
+    "vue-template-compiler": "^2.5.16",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.4",
