@@ -1,4 +1,4 @@
-import vFlexContainer from '@/src/flex/container'
+import vFlexContainer from './src/flex/container'
 
 export default {
     install (Vue, options) {
