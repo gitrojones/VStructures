@@ -1,6 +1,6 @@
 {
   "name": "VStructures",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "description": "Simple Flexbox structures for Vue",
   "main": "VStructures.js",
   "scripts": {
