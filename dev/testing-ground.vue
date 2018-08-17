@@ -1,8 +1,8 @@
 <template>
     <div class="testing-ground">
         <!-- Import components here to test -->
-        <v-flex-container schema="customClass" padding="1em" margin="0 auto">
-            <template slot="level-1">
+        <v-flex-container schema="customClass" tag="a" href="/test">
+            <template slot="testing123">
                 <h1 class="test1">Hello World</h1>
                 <h1 class="test2">Foo, Bar</h1>
             </template>
