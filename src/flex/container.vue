@@ -13,13 +13,10 @@
 </template>
 
 <script>
-import Vue from 'vue'
-
 export default {
   name: 'VS-FlexContainer',
   created () {
     this.levels = Object.keys(this.$slots).length
-    console.log(Object.keys(this.$slots))
   },
   props: {
     schema: {
