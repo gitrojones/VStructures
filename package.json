@@ -1,6 +1,6 @@
 {
   "name": "VStructures",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple Flexbox structures for Vue",
   "main": "VStructures.js",
   "scripts": {
@@ -22,8 +22,7 @@
     "url": "https://github.com/gitrojones/VStructures/issues"
   },
   "homepage": "https://github.com/gitrojones/VStructures#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "vue": "^2.5.16",
     "vue-loader": "^15.0.9",
