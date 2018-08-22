@@ -3,10 +3,8 @@
   <div class="o-flexContainer__wrapper" :class="schema ? schema + '__wrapper' : ''">
     <div ref="column" v-for="level in levels" :key="level"
     class="o-flexContainer__column"
-    :class="[schema ? schema + '__column' : '', '-level-' + level]">
-      <slot :name="'level-' + level"></slot>
-      <slot :name="Object.keys($slots)[level - 1]" v-if="Object.keys($slots)[level - 1] !== 'level-' + level">
-      </slot>
+    :class="[schema ? schema + '__column' : '', Object.keys($slots)[level - 1]]">
+      <slot :name="Object.keys($slots)[level - 1]"></slot>
     </div>
   </div>
 </component>
