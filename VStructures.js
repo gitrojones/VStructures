@@ -1,4 +1,5 @@
 import vFlexContainer from './src/flex/container'
+import vSteps from './src/utils/steps'
 
 export default {
     install (Vue, options) {
@@ -7,5 +8,6 @@ export default {
             Vue.component(component, this[component])
         })
     },
-    vFlexContainer
+    vFlexContainer,
+    vSteps
 }

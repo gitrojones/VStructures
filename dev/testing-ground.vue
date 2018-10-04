@@ -10,24 +10,42 @@
     <h1 class="testing2" slot="level-2">Foo Bar</h1>
   </v-flex-container>
   
-  <v-flex-container :fill="true">
-    <div class="green"></div>
-  </v-flex-container>
-
-  <v-flex-container :fill="true">
-    <div class="red"></div>
-  </v-flex-container>
+  <v-steps tag="v-flex-container"
+           @stepChange="(step) => stepTest = step"
+           :activeStep="stepTest"
+           :bind="{ fill: true }">
+    <transition-group name="fadeIn" mode="out-in" slot-scope="{ steps }" class="fill">
+      <div class="green" @click="steps.incrementStep" :key="0" v-if="steps.step === 0"></div>
+      <div class="red" @click="steps.decrementStep" :key="1" v-if="steps.step === 1"></div>
+    </transition-group>
+  </v-steps>
 </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      stepTest: 1
+    }
+  },
+  mounted () {
+    window.setTimeout(() => {
+      this.stepTest = 0;
+    }, 10000)
+  }
 }
 </script>
 
 <style lang="less">
 * {
   box-sizing: border-box;
+}
+
+.fill {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
 }
 
 body {
@@ -44,8 +62,29 @@ body {
   flex: 1;
 }
 
+.fadeIn {
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+    max-height: 0;
+  }
+  
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+    max-height: 10000px;
+  }
+
+  &-leave-active,
+  &-enter-active {
+    transition: opacity 1s ease;
+  }
+}
+
 .red,
-.green {
+.green,
+.blue,
+.orange {
   display: flex;
   flex-flow: column;
   flex: 1;
@@ -57,6 +96,14 @@ body {
 
 .red {
   background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
 }
 
 .customClass {

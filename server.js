@@ -17,4 +17,4 @@ server.use(WebpackHotMiddleware(bundle, {
   publicPath: config.output.publicPath
 }))
 
-server.listen(3000, () => console.log('Test app listening on port 3000!'))
+server.listen(12000, () => console.log('Test app listening on port 12000!'))
