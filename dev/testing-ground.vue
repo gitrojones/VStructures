@@ -1,24 +1,26 @@
 <template>
 <div class="testing-ground">
-  <!-- Import components here to test -->
-  <v-flex-container schema="customClass" tag="a" href="/test">
-    <template slot="testing123">
-      <h1 class="test1">Hello World</h1>
-      <h1 class="test2">Foo, Bar</h1>
-    </template>
-    
-    <h1 class="testing2" slot="level-2">Foo Bar</h1>
-  </v-flex-container>
-  
-  <v-steps tag="v-flex-container"
-           @stepChange="(step) => stepTest = step"
-           :activeStep="stepTest"
-           :bind="{ fill: true }">
-    <transition-group name="fadeIn" mode="out-in" slot-scope="{ steps }" class="fill">
-      <div class="green" @click="steps.incrementStep" :key="0" v-if="steps.step === 0"></div>
-      <div class="red" @click="steps.decrementStep" :key="1" v-if="steps.step === 1"></div>
-    </transition-group>
-  </v-steps>
+  <div class="testing-ground__wrapper">
+    <!-- Import components here to test -->
+    <v-flex-container schema="customClass" tag="a" href="/test">
+      <template slot="testing123">
+        <h1 class="test1">Hello World</h1>
+        <h1 class="test2">Foo, Bar</h1>
+      </template>
+
+      <h1 class="testing2" slot="level-2">Foo Bar</h1>
+    </v-flex-container>
+
+    <v-steps tag="v-flex-container"
+            @stepChange="(step) => stepTest = step"
+            :activeStep="stepTest"
+            :bind="{ fill: true }">
+      <transition-group name="fadeIn" mode="out-in" slot-scope="{ steps }" class="fill">
+        <div class="green" @click="steps.incrementStep" :key="0" v-if="steps.step === 0"></div>
+        <div class="red" @click="steps.decrementStep" :key="1" v-if="steps.step === 1"></div>
+      </transition-group>
+    </v-steps>
+  </div>
 </div>
 </template>
 
@@ -26,7 +28,7 @@
 export default {
   data () {
     return {
-      stepTest: 1
+      stepTest: 0
     }
   },
   mounted () {
@@ -45,7 +47,7 @@ export default {
 .fill {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 body {
@@ -59,7 +61,14 @@ body {
 .testing-ground {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+  }
 }
 
 .fadeIn {
@@ -87,11 +96,20 @@ body {
 .orange {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .green {
+  position: relative;
   background-color: green;
+
+  &::after {
+    content: 'Here';
+    color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .red {

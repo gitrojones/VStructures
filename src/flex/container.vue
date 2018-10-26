@@ -47,17 +47,17 @@ export default {
 .o-flexContainer.-fill {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  flex: 1 1 auto;
 }
 .o-flexContainer.-fill .o-flexContainer__wrapper {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  flex: 1 1 auto;
 }
 .o-flexContainer.-fill .o-flexContainer__column {
   display: flex;
   flex-flow: column;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .o-flexContainer__wrapper,
