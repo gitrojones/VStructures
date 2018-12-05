@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import VStructures from '@/VStructures.js'
-import TestingGround from '@/dev/testing-ground.vue'
+import VStructures from '../VStructures.js'
+import TestingGround from './testing-ground.vue'
 
 Vue.use(VStructures)
 

@@ -15,7 +15,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': __dirname
+      '@': path.resolve(__dirname, './src')
     },
     extensions: [
       '.vue', '.js', '.json'
@@ -34,7 +34,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['babel-preset-env']
+            presets: ['@babel/preset-env']
           }
         },
         exclude: (file) => (

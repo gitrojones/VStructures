@@ -1,5 +1,6 @@
 <template>
-<component class="o-stepManager" :is="tag" v-bind="bind">
+<component class="o-stepManager" :is="tag" 
+  v-bind="bind" v-on="on">
   <slot v-bind:steps="{ step: currentStep, incrementStep, decrementStep, gotoStep }"></slot>
 </component>
 </template>
@@ -17,6 +18,10 @@ export default {
       default: 'div'
     },
     bind: {
+      type: Object,
+      default () { return {} }
+    },
+    on: {
       type: Object,
       default () { return {} }
     }
